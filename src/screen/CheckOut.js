@@ -37,8 +37,8 @@ export default (props) => {
   });
 
   React.useEffect(() => {
-    console.log(orderdata);
-    console.log("오더데이터", orderMethd);
+    // console.log(orderdata);
+    // console.log("오더데이터", orderMethd);
     if (same) {
       setName(orderdata.orderer);
       setPhone(orderdata.phone);
@@ -60,7 +60,7 @@ export default (props) => {
     const { IMP } = window;
     if (checkAgree && orderMethd && orderdata && name) {
       if (orderMethd === "계좌이체") {
-        console.log("계죄이체");
+        // console.log("계죄이체");
         IMP.init(process.env.REACT_APP_IMPORT);
         const data = {
           pg: orderMethd, // PG사
@@ -136,8 +136,8 @@ export default (props) => {
 
   const callback = (response) => {
     const query = queryString.stringify(response);
-    console.log(response);
-    console.log(query);
+    // console.log(response);
+    // console.log(query);
     const { success, merchant_uid, error_msg } = response;
     if (success) {
       // alert("결제 성공");

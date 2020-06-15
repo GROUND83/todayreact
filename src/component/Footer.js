@@ -1,7 +1,7 @@
 import React from "react";
 import theme from "../styles/theme";
 import { AiFillCustomerService } from "react-icons/ai";
-import Instargram from "../assets/instargram.svg";
+
 export default ({ isMobile, isDesktop, isTablet }) => {
   return (
     <div
@@ -37,7 +37,6 @@ export default ({ isMobile, isDesktop, isTablet }) => {
             <div>
               <span>인스타그램</span>
               <span>카카오채널</span>
-              <Instargram />
             </div>
             <div
               style={{

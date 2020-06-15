@@ -38,7 +38,7 @@ const App = () => {
     window.Kakao.init(kakaoid);
   }
 
-  console.log("카카오로그인", window.Kakao.isInitialized());
+  // console.log("카카오로그인", window.Kakao.isInitialized());
 
   return (
     <BrowserRouter>

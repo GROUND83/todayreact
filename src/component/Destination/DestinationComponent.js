@@ -25,7 +25,7 @@ export default ({ selectedAddress }) => {
   const getPostcode = async ({ address, zonecode }) => {
     if (zonecode) {
       await api.postcode({ zonecode }).then((result) => {
-        console.log(result);
+        // console.log(result);
         if (result.data[0]) {
           console.log("가능");
           setFinalAddress({ address, zonecode, ispossible: true });

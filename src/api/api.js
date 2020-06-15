@@ -1,12 +1,11 @@
 import axios from "axios";
 
 const callApi = async (method, path, data, token, params = {}) => {
-  console.log(typeof token);
   const headers = {
     Authorization: `Basic ${token}`,
     "Content-Type": "application/json",
   };
-  console.log("헤더", headers);
+  // console.log("헤더", headers);
   const baseUrl = process.env.SERVER_API_URL;
   const fullUrl = `${baseUrl}${path}`;
   if (method === "get" || method === "delete") {
@@ -25,7 +24,7 @@ export default {
   user: ({ id, token }) => callApi("get", `/users/${id}/`, null, token),
   //유저정보
   userUpdate: ({ id, form, token }) => {
-    console.log({ id, form, token });
+    // console.log({ id, form, token });
     return callApi("put", `/users/${id}/`, form, token, null);
   },
   //유저정보
@@ -33,7 +32,7 @@ export default {
     callApi("get", `/postcode/?postcode=${zonecode}`, null, null, null),
   // 메뉴일정
   calender: ({ startday, endday }) => {
-    console.log(startday, endday);
+    // console.log(startday, endday);
     return callApi(
       "get",
       `/calender/month/search?start_date=${startday}&end_date=${endday}`,
@@ -54,7 +53,6 @@ export default {
     ),
   // destination add
   destination: ({ form, token }) => {
-    console.log({ form, token });
     return callApi("post", `/destinations/`, form, token);
   },
   // destination add
@@ -62,7 +60,6 @@ export default {
     callApi("get", `/destinations/`, null, token, null),
   // destination delete
   deletedestination: ({ itemid, token }) => {
-    console.log({ itemid, token });
     return callApi("delete", `/destinations/${itemid}/`, null, token, null);
   },
   // SMS

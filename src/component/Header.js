@@ -28,7 +28,7 @@ export default ({ isMobile, isDesktop, isTablet }) => {
   const clickHam = () => {
     setIsVisible(!isVisible);
   };
-  console.log({ isMobile, isDesktop, isTablet });
+  // console.log({ isMobile, isDesktop, isTablet });
   return (
     <HeaderWrap>
       <div

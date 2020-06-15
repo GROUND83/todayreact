@@ -47,7 +47,7 @@ export default ({
         .subtract(1, "month")
         .startOf("month")
         .format("YYYY-MM-DD");
-      console.log(startdata);
+
       setLoading(true);
       try {
         await api
@@ -56,7 +56,6 @@ export default ({
             endday: today.clone().add(1, "month").format("YYYY-MM-DD"),
           })
           .then((result) => {
-            console.log("서버에서 받은켈린더", result);
             setCalenderEvent(result.data);
             setLoading(false);
           });
@@ -116,7 +115,7 @@ export default ({
   }, [calenderEvent, endWeek, startWeek, today]);
 
   const clickday = (day) => {
-    console.log("클릭", day);
+    // console.log("클릭", day);
     setClickData(day);
     setSelected(day.date);
 
@@ -140,13 +139,9 @@ export default ({
     } else if (multiOrder) {
       // 멀티오더
       if (!day.salad && day.holiday) {
-        console.log("휴일");
         setClickData({ holiday: day.holiday });
-        console.log("클릭데이터", clickData);
       } else if (day.salad) {
-        console.log("샐러드");
         let find = selectedArray.findIndex((array) => array.date === day.date);
-        console.log(find);
 
         if (find <= -1) {
           setSelectedArray((seletedArray) => [
@@ -167,7 +162,6 @@ export default ({
           );
         }
       } else if (!day.salad && day.holiday === undefined) {
-        console.log("미지정");
         setClickData({ nothing: "아직 샐러드메뉴가 정해지지 않았습니다." });
       }
       setSelected(day.date);
@@ -178,7 +172,6 @@ export default ({
   };
 
   const clickCheck = () => {
-    console.log("클릭", selectedArray.length);
     if (selectedArray.length < 10) {
       toast.error("10회 이상 선택하여야 합니다.");
     } else if (selectedArray.length >= 10) {
@@ -190,7 +183,7 @@ export default ({
     setModalVisible(true);
   };
   React.useEffect(() => {
-    console.log("반영 클릭데이터", clickData);
+    // console.log("반영 클릭데이터", clickData);
   }, [clickData]);
 
   const weekofdays = ["월", "화", "수", "목", "금", "토"];
@@ -235,7 +228,6 @@ export default ({
         >
           <div
             onClick={() => {
-              console.log(today.clone().subtract(1, "month"));
               setToday(today.clone().subtract(1, "month"));
             }}
             style={{ marginRight: 20 }}

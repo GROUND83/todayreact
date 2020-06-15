@@ -12,11 +12,11 @@ export default () => {
   const dispatch = useDispatch();
 
   const clickKakao = async (props) => {
-    console.log("카카오로그인");
+    // console.log("카카오로그인");
     await window.Kakao.Auth.login({
       scope: "account_email,phone_number,phone_number,profile",
       success: function (authObj) {
-        console.log(authObj);
+        // console.log(authObj);
         kakaoGetProfile();
       },
       fail: function (err) {
