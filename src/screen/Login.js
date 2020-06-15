@@ -94,13 +94,15 @@ export default () => {
           style={{
             display: "flex",
             backgroundColor: "#fee500",
+
             marginTop: 30,
             borderRadius: 10,
+            border: 0,
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "center",
-            width: 200,
-            padding: "10px 10px",
+            width: 280,
+            padding: "20px 30px",
           }}
         >
           <img

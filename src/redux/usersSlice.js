@@ -70,10 +70,13 @@ export const userLogin = ({ history, response }) => async (dispatch) => {
   };
   console.log(userdata);
   console.log("서버로그인");
-  const saveuser = await api.serverlogin(userdata).then((result) => {
-    console.log("서버에서 받은데이터", result.data);
-    return result.data;
-  });
+
+  const saveuser = await api
+    .serverlogin(JSON.stringify(userdata))
+    .then((result) => {
+      console.log("서버에서 받은데이터", result.data);
+      return result.data;
+    });
   const { id, token } = saveuser;
 
   await api.user({ id, token }).then((result) => {

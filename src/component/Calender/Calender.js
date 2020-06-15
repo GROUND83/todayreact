@@ -192,7 +192,6 @@ export default ({
     <div
       style={{
         width: "100%",
-
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -208,9 +207,10 @@ export default ({
           alignItems: "center",
           backgroundColor: "white",
           padding: 10,
+          boxShadow: "0 0.1rem 0.1rem rgba(0, 0, 0, 0.08)",
         }}
       >
-        <div>
+        <div style={{}}>
           <h1 style={{ fontSize: 18 }}>메뉴일정</h1>
         </div>
         <div
@@ -260,6 +260,7 @@ export default ({
             flexDirection: "column",
             alignItems: "center",
             backgroundColor: "white",
+            boxShadow: "0 0.2rem 0.25rem rgba(0, 0, 0, 0.1)",
           }}
         >
           <ul
@@ -552,6 +553,7 @@ export default ({
                   justifyContent: "center",
                   flex: 1,
                   width: "100%",
+                  boxShadow: "0 0.2rem 0.25rem rgba(0, 0, 0, 0.1)",
                 }}
               >
                 <p>일정을 선택해주세요.</p>
@@ -619,6 +621,7 @@ const DayView = styled.div`
     props.isMobile ? "80px" : props.isTablet ? "80px" : "120px"};
   padding: 3px;
   border-radius: 3px;
+
   background-color: ${(props) =>
     props.isbefore
       ? theme.GRAY_03
@@ -629,9 +632,10 @@ const DayView = styled.div`
 
 const DayText = styled.span`
   padding: 2px;
-  font-size: 1.2rem;
-  border-radius: 10px;
+  font-size: 0.8rem;
+  border-radius: 20px;
   padding: 3px;
+  text-align: center;
   font-weight: ${(props) => (props.isToday ? "700" : "200")};
   color: ${(props) => (props.isSelected ? "white" : theme.GRAY_08)};
   background-color: ${(props) =>

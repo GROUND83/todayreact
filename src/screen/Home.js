@@ -55,11 +55,11 @@ export default () => {
         }}
       />
 
-      <div style={{ transform: "translateY(-100%)", zIndex: 100 }}>
-        <h1 style={{ color: "white", fontWeight: "300", fontSize: "2.2rem" }}>
+      <div style={{ transform: "translateY(-50%)", zIndex: 100, padding: 30 }}>
+        <h1 style={{ color: "white", fontWeight: "300", fontSize: "1.5rem" }}>
           건강한 삶이 시작되는곳,
           <br />
-          <span style={{ fontWeight: "bold", fontSize: "2.2rem" }}>
+          <span style={{ fontWeight: "bold", fontSize: "2rem" }}>
             투데이샐러드
           </span>
           가 함께 하겠습니다.

@@ -26,8 +26,9 @@ export default ({ item, index, isLast }) => {
         justifyContent: "flex-start",
         backgroundColor: "white",
         margin: 3,
-        padding: 10,
-        width: 320,
+        padding: "20px",
+        width: 340,
+        boxShadow: "0 0.2rem 0.2rem rgba(0, 0, 0, 0.1)",
       }}
     >
       <img
@@ -64,8 +65,8 @@ export default ({ item, index, isLast }) => {
               flexDirection: "row",
               justifyContent: "center",
               alignItems: "center",
-              borderWidth: 0.5,
-              padding: "2px 8px",
+              border: "1px solid",
+              padding: "8px 12px",
               borderColor:
                 ingredients.ingredient_type === "01base"
                   ? theme.PRIMARY_00
@@ -104,8 +105,8 @@ export default ({ item, index, isLast }) => {
           </div>
         ))}
       </div>
-      <p style={{ marginTop: 10 }}>{item.calory}Kcal</p>
-      <p style={{ marginTop: 5 }}>
+      <p style={{ marginTop: 10 }}>{item.calory}kcal</p>
+      <p style={{ marginTop: 10, fontSize: 18, fontWeight: "bold" }}>
         {item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원 부터
       </p>
     </Wrap>

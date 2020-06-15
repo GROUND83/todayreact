@@ -18,11 +18,13 @@ export default (props) => {
       style={{
         display: "flex",
         width: isMobile ? "100%" : isDesktop ? "70%" : "100%",
-        minHeight: "92vh",
+        minHeight: "100vh",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "flex-start",
-        paddingTop: 54,
+        paddingTop: 70,
+
+        backgroundColor: "white",
       }}
     >
       {props.children}

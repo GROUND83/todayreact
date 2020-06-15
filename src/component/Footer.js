@@ -9,11 +9,9 @@ export default ({ isMobile, isDesktop, isTablet }) => {
         display: "flex",
         flexDirection: "column",
         width: "100%",
-        minHeight: 400,
+        minHeight: 230,
         padding: 20,
-        flex: "auto",
-        color: "white",
-        fontWeight: "300",
+        flex: 1,
         backgroundColor: theme.PRIMARY_04,
       }}
     >
@@ -21,10 +19,10 @@ export default ({ isMobile, isDesktop, isTablet }) => {
         <footer
           style={{
             display: "flex",
+            flex: 1,
             flexDirection: "column",
             width: "100%",
             padding: 20,
-            flex: "auto",
           }}
         >
           <div
@@ -34,23 +32,32 @@ export default ({ isMobile, isDesktop, isTablet }) => {
               flexDirection: "column",
             }}
           >
-            <div>
-              <span>인스타그램</span>
-              <span>카카오채널</span>
-            </div>
-            <div
+            <a
+              href="tel:0647559981"
               style={{
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
               }}
             >
-              <AiFillCustomerService size={18} />
-              <p style={{ marginLeft: 10, fontWeight: "blod", fontSize: 16 }}>
-                고객샌터 | 064.755.9981
-              </p>
+              <AiFillCustomerService size={20} />
+              <span
+                style={{ fontSize: 20, marginLeft: 10, fontWeight: "blod" }}
+              >
+                고객센터 | 064.755.9981
+              </span>
+            </a>
+            <div
+              style={{
+                marginTop: 10,
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <span>인스타그램</span>
+              <span style={{ marginTop: 10 }}>카카오채널</span>
             </div>
-            <span style={{ fontSize: 12, marginTop: 10 }}>
+            <span style={{ marginTop: 10, fontSize: 14 }}>
               그라운드83 | 229-01-75910
               <a
                 href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2290175910"
@@ -59,21 +66,21 @@ export default ({ isMobile, isDesktop, isTablet }) => {
                 [사업자정보확인]
               </a>
             </span>
-            <span style={{ fontSize: 12 }}>
+            <span style={{ marginTop: 10, fontSize: 14 }}>
               통신판매업신고번호 | 제 2019-제주이도2-0115호
             </span>
-          </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <span style={{ fontSize: 12 }}>
+            <span style={{ marginTop: 10, fontSize: 14 }}>
               제주특별자치도 제주시 독짓골2길 12
             </span>
-            <span style={{ fontSize: 12 }}>이메일문의 | cs@todaysalad.com</span>
+            <span style={{ marginTop: 10, fontSize: 14 }}>
+              이메일문의 | cs@todaysalad.com
+            </span>
+            <span style={{ marginTop: 10, fontSize: 14 }}>
+              copyright&copy;
+              {new Date().getFullYear()}
+              그라운드83 All rights reserved
+            </span>
           </div>
-          <span style={{ fontSize: 12 }}>
-            copyright&copy;
-            {new Date().getFullYear()}
-            그라운드83 All rights reserved
-          </span>
         </footer>
       ) : (
         <footer
@@ -83,7 +90,6 @@ export default ({ isMobile, isDesktop, isTablet }) => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            color: "white",
           }}
         >
           <div
@@ -91,12 +97,8 @@ export default ({ isMobile, isDesktop, isTablet }) => {
               flexDirection: "column",
             }}
           >
-            {/* <div>
-              <span>인스타그램</span>
-              <span>카카오채널</span>
-              <Instargram />
-            </div> */}
-            <div
+            <a
+              href="tel:0647559981"
               style={{
                 display: "flex",
                 flexDirection: "row",
@@ -113,9 +115,21 @@ export default ({ isMobile, isDesktop, isTablet }) => {
               >
                 고객샌터 | 064.755.9981
               </p>
+            </a>
+            <div
+              style={{
+                marginTop: 10,
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <p>인스타그램</p>
+              <p style={{ marginTop: 10 }}>카카오채널</p>
             </div>
-            <div style={{ display: "flex", flexDirection: "row" }}>
-              <span style={{ fontSize: 14 }}>
+            <div
+              style={{ marginTop: 10, display: "flex", flexDirection: "row" }}
+            >
+              <p style={{ fontSize: 14 }}>
                 그라운드83 | 229-01-75910
                 <a
                   href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2290175910"
@@ -123,24 +137,24 @@ export default ({ isMobile, isDesktop, isTablet }) => {
                 >
                   [사업자정보확인]
                 </a>
-              </span>
-              <span style={{ fontSize: 14, marginLeft: 20 }}>
+              </p>
+              <p style={{ fontSize: 14, marginLeft: 20 }}>
                 통신판매업신고번호 | 제 2019-제주이도2-0115호
-              </span>
+              </p>
             </div>
-            <div style={{ display: "flex", flexDirection: "row" }}>
-              <span style={{ fontSize: 14 }}>
-                제주특별자치도 제주시 독짓골2길 14
-              </span>
-              <span style={{ fontSize: 14, marginLeft: 20 }}>
+            <div
+              style={{ marginTop: 10, display: "flex", flexDirection: "row" }}
+            >
+              <p style={{ fontSize: 14 }}>제주특별자치도 제주시 독짓골2길 14</p>
+              <p style={{ fontSize: 14, marginLeft: 20 }}>
                 이메일문의 | cs@todaysalad.com
-              </span>
+              </p>
             </div>
-            <span style={{ fontSize: 14 }}>
+            <p style={{ marginTop: 10, fontSize: 14 }}>
               copyright&copy;
               {new Date().getFullYear()}
               그라운드83 All rights reserved
-            </span>
+            </p>
           </div>
         </footer>
       )}

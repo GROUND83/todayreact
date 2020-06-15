@@ -2,11 +2,12 @@ import axios from "axios";
 
 const callApi = async (method, path, data, token, params = {}) => {
   const headers = {
-    Authorization: `Basic ${token}`,
+    Authorization: `Bearer ${token}`,
     "Content-Type": "application/json",
   };
   // console.log("헤더", headers);
-  const baseUrl = process.env.SERVER_API_URL;
+  const baseUrl = process.env.REACT_APP_SERVER_API_URL;
+  console.log(baseUrl);
   const fullUrl = `${baseUrl}${path}`;
   if (method === "get" || method === "delete") {
     return axios[method](fullUrl, { headers, params });
@@ -21,7 +22,10 @@ export default {
     return callApi("post", "/users/login/", form);
   },
   //유저정보
-  user: ({ id, token }) => callApi("get", `/users/${id}/`, null, token),
+  user: ({ id, token }) => {
+    console.log(id, token);
+    return callApi("get", `/users/${id}/`, null, token);
+  },
   //유저정보
   userUpdate: ({ id, form, token }) => {
     // console.log({ id, form, token });

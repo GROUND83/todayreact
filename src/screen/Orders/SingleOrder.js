@@ -232,17 +232,17 @@ export default (props) => {
   return (
     <div
       style={{
-        padding: 3,
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
         width: "100%",
+        padding: 15,
       }}
     >
       <div
         style={{
           width: "100%",
-          padding: 10,
+          padding: 20,
           backgroundColor: theme.GRAY_02,
           borderRadius: 5,
         }}
@@ -300,7 +300,7 @@ export default (props) => {
             padding: 10,
             display: "flex",
             flexDirection: "column",
-            marginTop: 3,
+            marginTop: 10,
             backgroundColor: theme.GRAY_02,
             borderRadius: 5,
           }}
@@ -353,7 +353,7 @@ export default (props) => {
           padding: 10,
           backgroundColor: theme.GRAY_02,
           borderRadius: 5,
-          marginTop: 3,
+          marginTop: 15,
         }}
       >
         <span style={{ fontWeight: "bold" }}>핸드폰인증</span>

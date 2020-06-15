@@ -1,3 +1,5 @@
+const BOX_BORDER = "1px solid #e6e6e6";
+const BORDER_RADIUS = "4px";
 const theme = {
   PRIMARY_00: "#628946",
   PRIMARY_01: "#897f21",
@@ -21,6 +23,19 @@ const theme = {
   SECONDARY_COLOR03: "#aecc49",
   SECONDARY_COLOR: "rgb(238, 167, 2)",
   ALRET_COLOR: "#df8500",
+  maxWidth: "935px",
+  bgColor: "#FAFAFA",
+  blackColor: "#262626",
+  darkGreyColor: "#999",
+  lightGreyColor: "#c7c7c7",
+  redColor: "#ED4956",
+  blueColor: "#3897f0",
+  darkBlueColor: "#003569",
+  boxBorder: "1px solid",
+  borderRadius: "4px",
+  whiteBox: `border:${BOX_BORDER};
+             border-radius:${BORDER_RADIUS};
+             background-color:white;`,
 };
 
 export default theme;

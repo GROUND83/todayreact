@@ -27,17 +27,17 @@ export default ({
     <div
       style={{
         width: "100%",
-        padding: 10,
+        padding: 20,
         backgroundColor: theme.GRAY_02,
         borderRadius: 5,
-        marginTop: 3,
+        marginTop: 15,
       }}
     >
       <p style={{ fontWeight: "bold" }}>배송지</p>
       <button
         onClick={() => openDestinationModal()}
         style={{
-          marginTop: 3,
+          marginTop: 10,
           width: "100%",
           display: "flex",
           flexDirection: "row",

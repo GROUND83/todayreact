@@ -13,6 +13,10 @@ const BtnWrap = styled.div`
   flex: 1;
   padding: 6px;
   border-width: 0.5px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-color: ${(props) => (props.value ? theme.PRIMARY_04 : theme.GRAY_04)};
   background-color: ${(props) =>
     props.value ? theme.PRIMARY_04 : theme.GRAY_03};
@@ -20,6 +24,7 @@ const BtnWrap = styled.div`
 const BtnText = styled.p`
   text-align: center;
   font-weight: 300;
+
   color: ${(props) => (props.value ? "white" : "gray")};
 `;
 
@@ -27,11 +32,23 @@ export default (props) => {
   // 전화 번호 확인 -> 인증할것
   const [value, setValue] = React.useState(0);
 
+  const isDesktop = useMediaQuery({
+    query: "(min-width: 1024px)",
+  });
+  const isTablet = useMediaQuery({
+    query: "(min-width: 768px) and (max-width: 1023px)",
+  });
+  const isMobile = useMediaQuery({
+    query: "(max-width: 767px)",
+  });
+
   return (
     <ScreenWrap>
       <div
         style={{
-          width: "100%",
+          width: isMobile ? "100%" : isDesktop ? "70%" : "100%",
+          position: "fixed",
+          marginTop: -14,
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
@@ -50,7 +67,7 @@ export default (props) => {
           <BtnText value={value === 2 && true}>단체주문</BtnText>
         </BtnWrap>
       </div>
-      <div style={{ width: "100%" }}>
+      <div style={{ width: "100%", paddingTop: 28 }}>
         <div
           style={{
             display: "flex",
@@ -60,7 +77,7 @@ export default (props) => {
           <div
             style={{
               backgroundColor: theme.SECONDARY_COLOR01,
-              padding: "3px 10px",
+              padding: "10px 20px",
             }}
           >
             {value === 0 && (
