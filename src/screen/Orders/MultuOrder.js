@@ -24,7 +24,7 @@ export default (props) => {
   const isMobile = useMediaQuery({
     query: "(max-device-width: 767px)",
   });
-  const { name, email, phone, id } = useSelector((state) => state.usersReducer);
+  const { name, email, phone } = useSelector((state) => state.usersReducer);
   // linkData
   const [linkData, setLinkData] = React.useState();
   const [today, setToday] = React.useState(moment());
@@ -45,7 +45,6 @@ export default (props) => {
 
   const [modalVisible, setModalVisible] = React.useState(false);
   const [destinationVisible, setDestinationVisible] = React.useState(false);
-  const [fromCalender, setFromCalender] = React.useState();
 
   // const [discount, setDiscount] = React.useState(0);
   const [totalPrice, setTotalPrice] = React.useState(0);
@@ -57,7 +56,7 @@ export default (props) => {
   const [price, setPrice] = React.useState(0);
   const [discount, setDiscount] = React.useState(0);
   const [eventdiscount, setEventDiscount] = React.useState(0);
-  const [checkMinium, setCheckMinium] = React.useState(true);
+
   const [sendToPhone, setsendToPhone] = React.useState(false);
   const openDestinationModal = () => {
     setDestinationVisible(true);
