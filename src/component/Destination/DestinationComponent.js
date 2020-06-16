@@ -39,7 +39,7 @@ export default ({ selectedAddress }) => {
       console.log("주소를 입력하세요");
     }
   };
-  const API_KEY = process.env.REACT_APP_KOKAO_LOCAL_KEY;
+  const API_KEY = process.env.KOKAO_LOCAL_KEY;
 
   const findAddress = async (address) => {
     try {
