@@ -27,16 +27,18 @@ jobs:
         run: npm install
 
       - name: Build # React Build
+        env:
+          REACT_APP_IMPORT: ${{ secrets.REACT_APP_IMPORT}}
+          REACT_APP_SERVER_API_URL: ${{secrets.SERVER_API_URL}}
+          REACT_APP_KAKAO_KEY: ${{secrets.REACT_APP_KAKAO_KEY}}
+          KOKAO_LOCAL_KEY: ${{secrets.REACT_APP_KOKAO_LOCAL_KEY}}
         run: npm run build
 
       - name: Deploy # S3에 배포하기
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          REACT_APP_IMPORT: ${{ secrets.REACT_APP_IMPORT}}
-          REACT_APP_SERVER_API_URL: ${{secrets.SERVER_API_URL}}
-          REACT_APP_KAKAO_KEY: ${{secrets.REACT_APP_KAKAO_KEY}}
-          KOKAO_LOCAL_KEY: ${{secrets.REACT_APP_KOKAO_LOCAL_KEY}}
+
         run: |
           aws s3 cp \
             --recursive \
